@@ -31,11 +31,11 @@ function caesarDecrypt(text, shift) {
 
 // Example usage:
 var originalText = 'Secret message';
-var rotation = 8;
-
+var rotation = 8;//enter number to rotate by
+//save encrypted and decrypted as variables
 var encryptedText = caesarEncrypt(originalText, rotation);
 var decryptedText = caesarDecrypt(encryptedText, rotation);
-
+//log results to console
 console.log('Original:', originalText);
 console.log('Encrypted:', encryptedText);
 console.log('Decrypted:', decryptedText);
