@@ -1,14 +1,17 @@
 'use strict';
 
+//Caesar cipher function
 function caesarEncrypt(text, shift) {
-    var result = '';
 
+    var result = '';
+    
     for (var i = 0; i < text.length; i++) {
         var char = text[i];
-
+        //code to ensure that character is a letter between a-z
         if (char.match(/[a-z]/i)) {
             var code = text.charCodeAt(i);
-
+            //%26 to wrap around when reaching final letter
+            //97 is unicode for lowercase a, 65 is upper case A
             if (char === char.toLowerCase()) {
                 char = String.fromCharCode(((code - 97 + shift) % 26) + 97);
             } else {
@@ -21,7 +24,7 @@ function caesarEncrypt(text, shift) {
 
     return result;
 }
-
+//function that will perform decryption
 function caesarDecrypt(text, shift) {
     return caesarEncrypt(text, 26 - shift);
 }
